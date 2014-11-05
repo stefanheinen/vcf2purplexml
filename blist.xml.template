@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<purple version='1.0'>
+	<blist>
+		<!-- put your static contacts/chats here -->
+		{{#groups}}
+		    <group name='{{groupname}}'>
+		        <setting name='collapsed' type='bool'>1</setting>
+	            {{#contacts}}
+	                <contact>
+	                    {{#buddies}}
+		                    <buddy account='{{ownNumber}}' proto='prpl-whatsapp'>
+			                    <name>{{number}}</name>
+			                    <alias>{{alias}}</alias>
+		                    </buddy>
+		                {{/buddies}}
+		                <setting name='gtk-mute-sound' type='bool'>0</setting>
+	                </contact>
+	            {{/contacts}}
+		    </group>
+		{{/groups}}
+	</blist>
+	<privacy>
+		<account proto='prpl-whatsapp' name='{{ownNumber}}' mode='1'/>
+	</privacy>
+</purple>
